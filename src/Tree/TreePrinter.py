@@ -26,7 +26,7 @@ class TreeNode(object):
         self.right = None
 
 
-# 二叉树按层遍历  宽度优先遍历，队列结构
+# 二叉树按层遍历  宽度优先遍历，队列结构     < 不用保留二叉树的形状，只是打印每层节点值 >
 class TreePrinter(object):
     def printTree(self, root):
         import queue
