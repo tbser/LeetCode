@@ -61,7 +61,8 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
-
+        
+# 打印的时候 保留二叉树的形状  二维数组 
 class Solution(object):
     def printTree(self, root):
         """
@@ -78,7 +79,7 @@ class Solution(object):
                 return 0
             return max(getHeight(root.left), getHeight(root.right)) + 1   # 加上根结点
 
-        def preorderTraversal(root, level, left, right, result):
+        def preorderTraversal(root, level, left, right, result):     # 先序遍历
             if not root:
                 return
             mid = left + (right-left)/2
@@ -86,9 +87,9 @@ class Solution(object):
             preorderTraversal(root.left, level+1, left, mid-1, result)
             preorderTraversal(root.right, level+1, mid+1, right, result)
 
-        w, h = getWidth(root), getHeight(root)
-        result = [[""] * w for _ in range(h)]
-        preorderTraversal(root, 0, 0, w-1, result)
+        w, h = getWidth(root), getHeight(root)      # 首先得到二叉树的宽、高
+        result = [[""] * w for _ in range(h)]       # 初始化result数组 ( 一个二维数组，一共h行，每行w个" " )
+        preorderTraversal(root, 0, 0, w-1, result)  # 先序遍历二叉树
 
         return result
 
