@@ -25,7 +25,7 @@
 # 不管是递归方法还是非递归方法，遍历整棵树的时间复杂度都是O(N)，N为二叉树的结点数，额外空间复杂度为O(L)，L为二叉树的层数。
 
 
-class TreeNode:
+class TreeNode(object):
     def __init__(self, x):
         self.val = x
         self.left = None
