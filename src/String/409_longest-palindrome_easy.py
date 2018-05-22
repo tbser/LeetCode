@@ -22,8 +22,30 @@
 # 使用长度为 256 的整型数组来统计每个字符出现的个数，每个字符有偶数个可以用来构成回文字符串。
 # 因为回文字符串最中间的那个字符可以单独出现，所以如果有单独的字符就把它放到最中间。
 
+import collections
+
 
 class Solution(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        odds = 0
+        for k, v in collections.Counter(s).iteritems():
+            odds += v & 1
+        return len(s) - odds + int(odds > 0)
+
+    def longestPalindrome2(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        odd = sum(map(lambda x: x & 1, collections.Counter(s).values()))
+        return len(s) - odd + int(odd > 0)
+
+
+class Solution2(object):
     def longestPalindrome(self, s):
         """
         :type s: str
