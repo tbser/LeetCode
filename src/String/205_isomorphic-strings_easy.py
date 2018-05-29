@@ -73,7 +73,3 @@ class Solution2(object):
                 return False
         return True
 
-
-
-
-
