@@ -21,7 +21,6 @@
 import collections
 import string
 
-
 class Solution(object):
     """
     :type s: str
@@ -50,7 +49,19 @@ class Solution(object):
 
         return True
 
+    # all() 函数用于判断给定的可迭代参数 iterable 中的所有元素是否都为 TRUE，如果是返回 True，否则返回 False。
+    # 元素除了是 0、空、FALSE 外都算 TRUE。
+    # >>> all(['a', 'b', '', 'd'])  # 列表list，存在一个为空的元素
+    # False
+    # >>> all([0, 1，2, 3])  # 列表list，存在一个为0的元素
+    # False
+    # >>> all([])  # 空列表
+    # True
+    # >>> all(())  # 空元组
+    # True
     def isAnagram2(self, s, t):
+        # str.count(s)  返回字符串s在str中出现的次数
+        # string.ascii_lowercase  小写字母’abcdefghijklmnopqrstuvwxyz’
         return all([s.count(c)==t.count(c) for c in string.ascii_lowercase])
 
     def isAnagram3(self, s, t):
@@ -77,4 +88,7 @@ class Solution2(object):
         """
         return sorted(s) == sorted(t)
 
-
+# sort 与 sorted 区别：
+# sort 是应用在 list 上的方法，sorted 可以对所有可迭代的对象进行排序操作。
+# list 的 sort 方法返回的是对已经存在的列表进行操作，而内建函数 sorted 方法返回的是一个新的 list，
+# 而不是在原来的基础上进行的操作。
