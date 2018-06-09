@@ -72,15 +72,13 @@ class Solution2(object):
                 return False
         return True
 
-
-# 记录一个字符上次出现的位置，如果两个字符串中的字符上次出现的位置一样，那么就属于同构。
+    
 import collections
-
-
 class Solution3(object):
+    # 记录一个字符上次出现的位置，如果两个字符串中的字符上次出现的位置一样，那么就属于同构。
     def isIsomorphic(self, s, t):
         preIndexOfS = collections.defaultdict(int)  # 直接{}的话，会有keyerror
-        preIndexOfT = collections.defaultdict(int)
+        preIndexOfT = collections.defaultdict(int)  # preIndexOfT[key] 默认值为0
 
         for i in range(len(s)):
             if preIndexOfS[s[i]] != preIndexOfT[t[i]]:
@@ -90,5 +88,9 @@ class Solution3(object):
 
         return True
 
+# 这里的defaultdict(function_factory)构建的是一个类似dictionary的对象，其中keys的值，自行确定赋值，
+# 但是values的类型，是function_factory的类实例，而且具有默认值。
+# 比如default(int)则创建一个类似dictionary对象，里面任何的values都是int的实例，而且就算是一个不存在的key,
+# d[key] 也有一个默认值，这个默认值是int()的默认值0.
 
-
+# defaultdict属于内建函数dict的一个子类，调用工厂函数提供缺失的值。
