@@ -1,5 +1,6 @@
 ### 205 isomorphic-strings  字符串同构
 eg: paper title   
+
 定义两个字典preIndexOfS和preIndexOfT，以其中一个字符串的长度进行for循环range(len(s))，当做下标(0,len(s)-1)，遍历两个字符串当前位置的字母，
 作为字典的Key（s[i] t[i]），对应value为该字母之前出现的位置（i+1）（defaultdict[int]: 默认为0）。
 如果两个字符串中的字符上次出现的位置一样，那么就属于同构。
