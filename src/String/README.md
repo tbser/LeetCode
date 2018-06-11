@@ -20,3 +20,8 @@ eg: "abccccdd"  ->  "dccaccd"  7   统计每个字符出现次数
 eg:  121 True  -121 False   转置，判断相等
 
 对于一个整数x，x % 10得到x最右边的数字，然后x / 10得到x除去最右边数字剩下的部分。
+
+### 647 palindromic-substrings  回文子字符串
+eg: input:"aaa" output:6 （"a", "a", "a", "aa", "aa", "aaa"）
+
+s = "aaa"  <br>'#'.join(s) -> "a#a#a"
