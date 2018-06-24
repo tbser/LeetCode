@@ -71,6 +71,7 @@ eg:  121 True  -121 False   转置，判断相等
 
 对于一个整数x，x % 10得到x最右边的数字，然后x / 10得到x除去最右边数字剩下的部分。
 
+## 字符逆序：
 ### 151 reverse-words-in-a-string  字符逆序
 eg: "the sky is  blue ", return "blue is sky the".  List的reverse方法
 ```
@@ -84,7 +85,6 @@ fpath = "/data/deep/learning/1.jpg"
 fpath.split('/')    # ['', 'data', 'deep', 'learning', '1.jpg'] 
 file_path, file_name = os.path.split(fpath)   # '/data/deep/learning/', '1.jpg'
 ```
-
 ### 186 reverse-words-in-a-string-II  字符逆序 要求space:O(1)
 eg: s = "the sky is blue"<br>
 先把每个字符都逆转: "eulb si yks eht", <br>
@@ -106,6 +106,8 @@ reversed_word = word[::-1]  # 'gnauh'
 reversed_words = [word[::-1] for word in s.split(' ')]
 reversed = ' '.join(reversed_words)
 ```
+### 字符子串移位
+
 
 ### 647 palindromic-substrings  回文子字符串
 eg: input:"aaa" output:6 （"a", "a", "a", "aa", "aa", "aaa"）
