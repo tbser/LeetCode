@@ -71,6 +71,13 @@ eg:  121 True  -121 False   转置，判断相等
 
 对于一个整数x，x % 10得到x最右边的数字，然后x / 10得到x除去最右边数字剩下的部分。
 
+### 151 reverse-words-in-a-string  字符逆序
+eg: "the sky is  blue ", return "blue is sky the".  List的reverse方法
+
+t = s.split() 将字符串转换成包含一个个word的列表 ['the','sky','is','blue'] <br>
+t.reverse() 返回已经逆序的列表t  ['blue', 'is', 'sky', 'the'] <br>
+' '.join(t) 返回以空格连接的字符串
+
 ### 647 palindromic-substrings  回文子字符串
 eg: input:"aaa" output:6 （"a", "a", "a", "aa", "aa", "aaa"）
 
