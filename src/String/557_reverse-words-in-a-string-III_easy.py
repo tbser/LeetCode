@@ -1,3 +1,6 @@
+# coding:utf-8
+# 将每个单词逆序，保持该单词在句子中的位置不变
+
 # Given a string, you need to reverse the order of characters in each word within a sentence
 # while still preserving whitespace and initial word order.
 #
