@@ -32,7 +32,7 @@ class Solution2(object):
             for i in range((end - begin) // 2):
                 s[begin + i], s[end - 1 - i] = s[end - 1 - i], s[begin + i]
 
-        s = list(s)
+        s = list(s) 
         begin = 0
         for j in range(len(s) + 1):
             if j == len(s) or s[j] == ' ':
