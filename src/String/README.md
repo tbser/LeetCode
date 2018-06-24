@@ -88,6 +88,10 @@ eg: s = "the sky is blue"<br>
 然后把每个单词逆转: "blue is sky the"。<br>
 写一个reverse函数，依次分别从字符串的开头和结尾遍历，交换字符位置 <br>
 
+将字符串按每个字符划分："hello world" -> ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+l = [] <br>
+for i in range(len(s)): <br>
+    l.append(s[i]) <br>  
 
 ### 647 palindromic-substrings  回文子字符串
 eg: input:"aaa" output:6 （"a", "a", "a", "aa", "aa", "aaa"）
