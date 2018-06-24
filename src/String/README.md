@@ -78,8 +78,15 @@ t = s.split() 将字符串转换成包含一个个word的列表 ['the','sky','is
 t.reverse() 返回已经逆序的列表t  ['blue', 'is', 'sky', 'the'] <br>
 ' '.join(t) 返回以空格连接的字符串
 
+**more**: fpath = "/data/deep/learning/1.jpg" <br>
+- fpath.split('/')  # ['', 'data', 'deep', 'learning', '1.jpg'] <br>
+- file_path, file_name = os.path.split(fpath)   # '/data/deep/learning/', '1.jpg' <br>
 
 ### 186 reverse-words-in-a-string-II  字符逆序 要求space:O(1)
+eg: s = "the sky is blue"<br>
+先把每个字符都逆转: "eulb si yks eht", <br>
+然后把每个单词逆转: "blue is sky the"。<br>
+写一个reverse函数，依次分别从字符串的开头和结尾遍历，交换字符位置 <br>
 
 
 ### 647 palindromic-substrings  回文子字符串
