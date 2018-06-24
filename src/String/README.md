@@ -73,14 +73,17 @@ eg:  121 True  -121 False   转置，判断相等
 
 ### 151 reverse-words-in-a-string  字符逆序
 eg: "the sky is  blue ", return "blue is sky the".  List的reverse方法
-
-t = s.split() 将字符串转换成包含一个个word的列表 ['the','sky','is','blue'] <br>
-t.reverse() 返回已经逆序的列表t  ['blue', 'is', 'sky', 'the'] <br>
-' '.join(t) 返回以空格连接的字符串
-
-**more**: fpath = "/data/deep/learning/1.jpg" <br>
-- fpath.split('/')  # ['', 'data', 'deep', 'learning', '1.jpg'] <br>
-- file_path, file_name = os.path.split(fpath)   # '/data/deep/learning/', '1.jpg' <br>
+```
+t = s.split()  # 将字符串转换成包含一个个word的列表 ['the','sky','is','blue'] 
+t.reverse()  # 返回已经逆序的列表t  ['blue', 'is', 'sky', 'the'] 
+' '.join(t) # 返回以空格连接的字符串
+```
+**more**:
+```
+fpath = "/data/deep/learning/1.jpg" 
+fpath.split('/')    # ['', 'data', 'deep', 'learning', '1.jpg'] 
+file_path, file_name = os.path.split(fpath)   # '/data/deep/learning/', '1.jpg'
+```
 
 ### 186 reverse-words-in-a-string-II  字符逆序 要求space:O(1)
 eg: s = "the sky is blue"<br>
@@ -88,15 +91,19 @@ eg: s = "the sky is blue"<br>
 然后把每个单词逆转: "blue is sky the"。<br>
 写一个reverse函数，依次分别从字符串的开头和结尾遍历，交换字符位置 <br>
 
-将字符串按每个字符划分："hello world" -> ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
-l = [] <br>
-for i in range(len(s)): <br>
-    l.append(s[i]) <br>  
+将字符串按每个字符划分："hello world" -> ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd'] <br>
+```
+l = [] 
+for i in range(len(s)): 
+    l.append(s[i])   
+```
 
 ### 647 palindromic-substrings  回文子字符串
 eg: input:"aaa" output:6 （"a", "a", "a", "aa", "aa", "aaa"）
-
-s = "aaa"  <br>'#'.join(s) -> "a#a#a"
+```
+s = "aaa" 
+'#'.join(s) -> "a#a#a"
+```
 
 ### 696 count-binary-substrings  统计二进制字符串中连续 1 和连续 0 数量相同的子字符串个数
 eg: input:"00110011" output:6 ("0011", "01", "1100", "10", "0011", "01")
