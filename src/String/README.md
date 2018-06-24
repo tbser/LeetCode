@@ -78,6 +78,10 @@ t = s.split() 将字符串转换成包含一个个word的列表 ['the','sky','is
 t.reverse() 返回已经逆序的列表t  ['blue', 'is', 'sky', 'the'] <br>
 ' '.join(t) 返回以空格连接的字符串
 
+
+### 186 reverse-words-in-a-string-II  字符逆序 要求space:O(1)
+
+
 ### 647 palindromic-substrings  回文子字符串
 eg: input:"aaa" output:6 （"a", "a", "a", "aa", "aa", "aaa"）
 
