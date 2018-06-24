@@ -47,31 +47,8 @@
 4、后缀树和后缀数组 <br>
 5、通常面试中很少出现 <br>
 
-## LeetCode
-### 205 isomorphic-strings  字符串同构
-eg: paper title    比较两个字符串的每个对应位置字符上一次出现的位置
-
-定义两个字典preIndexOfS和preIndexOfT，以其中一个字符串的长度进行for循环range(len(s))，当做下标(0,len(s)-1)，遍历两个字符串当前位置的字母，
-作为字典的Key（s[i] t[i]），对应value为该字母之前出现的位置（i+1）（defaultdict[int]: 默认为0）。<br>
-如果两个字符串中的字符上次出现的位置一样，那么就属于同构。
-
-### 242 valid-anagram  两个字符串包含的字符是否完全相同
-eg: anagram nagaram    比较每个字符出现次数
-
-定义一个字典count，遍历其中一个字符串：for c in s, 将每个字符作为key，对应value为该字符出现次数，每次+1；然后再遍历另一个字符串，将当前字符
-作为key对应的value -1，如果value<0，说明字符串s中没有该字符，return False。
-
-### 409 longest-palindrome  计算一组字符集合可以组成的回文字符串的最大长度
-eg: "abccccdd"  ->  "dccaccd"  7   统计每个字符出现次数
-
-定义一个字典count，统计每个字符出现次数，然后统计有多少个出现偶数次的字符。如果还有出现奇数次（1次）的字符，最后+1，没有则直接返回出现偶数次的字符的个数。
-
-### 009 palindrome-number  判断一个整数是否是回文数
-eg:  121 True  -121 False   转置，判断相等
-
-对于一个整数x，x % 10得到x最右边的数字，然后x / 10得到x除去最右边数字剩下的部分。
-
-## 字符逆序：
+# LeetCode题
+## 字符交换 —— 活用局部逆序函数 组合的过程
 ### 151 reverse-words-in-a-string  字符逆序
 eg: "the sky is  blue ", return "blue is sky the".  List的reverse方法
 ```
@@ -106,8 +83,49 @@ reversed_word = word[::-1]  # 'gnauh'
 reversed_words = [word[::-1] for word in s.split(' ')]
 reversed = ' '.join(reversed_words)
 ```
-### 字符子串移位
+### 字符串移位
+给定一个字符串str，和一个整数i。i代表str中的位置，将str[0...i]移动右侧，str[i+1...N-1]移到左侧。 <br>
+eg: str="ABCDE", i=2  output: "DEABC". 要求时间复杂度为O(N), 额外空间复杂度为O(1)。<br>
+```
+1、将str[0...i]部分的字符逆序   ABCDE -> CBADE
+2、将str[i+1...N-1]部分的字符逆序  CBADE -> CBAED
+3、将str整体的字符逆序  CBAED -> DEABC
+```
 
+## 排序
+### 拼接最小字典序
+给定一个字符串类型的数组strs，请找到一种拼接顺序，使得将所有字符串拼接起来组成的大字符串是所有可能性中字典顺序最小的，并返回这个大字符串。<br>
+eg：strs=["abc", "de"]。可以拼成"abcde"，也可以拼成"deabc"，但前者字典顺序更小，所以返回"abcde"。<br>
+strs=["b", "ba"]。 output="bab" <br>  
+最优解的时间复杂度：O(N\*logN),其实质是一种排序的实现。<br>  
+```
+如果str1+str2 < str2+str1，则str1放在前面，否则str2放在前面。
+```
+
+## 字符比较
+### 205 isomorphic-strings  字符串同构
+eg: paper title    比较两个字符串的每个对应位置字符上一次出现的位置
+
+定义两个字典preIndexOfS和preIndexOfT，以其中一个字符串的长度进行for循环range(len(s))，当做下标(0,len(s)-1)，遍历两个字符串当前位置的字母，
+作为字典的Key（s[i] t[i]），对应value为该字母之前出现的位置（i+1）（defaultdict[int]: 默认为0）。<br>
+如果两个字符串中的字符上次出现的位置一样，那么就属于同构。
+
+### 242 valid-anagram  两个字符串包含的字符是否完全相同
+eg: anagram nagaram    比较每个字符出现次数
+
+定义一个字典count，遍历其中一个字符串：for c in s, 将每个字符作为key，对应value为该字符出现次数，每次+1；然后再遍历另一个字符串，将当前字符
+作为key对应的value -1，如果value<0，说明字符串s中没有该字符，return False。
+
+## 回文规则
+### 409 longest-palindrome  计算一组字符集合可以组成的回文字符串的最大长度
+eg: "abccccdd"  ->  "dccaccd"  7   统计每个字符出现次数
+
+定义一个字典count，统计每个字符出现次数，然后统计有多少个出现偶数次的字符。如果还有出现奇数次（1次）的字符，最后+1，没有则直接返回出现偶数次的字符的个数。
+
+### 009 palindrome-number  判断一个整数是否是回文数
+eg:  121 True  -121 False   转置，判断相等
+
+对于一个整数x，x % 10得到x最右边的数字，然后x / 10得到x除去最右边数字剩下的部分。
 
 ### 647 palindromic-substrings  回文子字符串
 eg: input:"aaa" output:6 （"a", "a", "a", "aa", "aa", "aaa"）
@@ -116,6 +134,7 @@ s = "aaa"
 '#'.join(s) -> "a#a#a"
 ```
 
+## 字符子串
 ### 696 count-binary-substrings  统计二进制字符串中连续 1 和连续 0 数量相同的子字符串个数
 eg: input:"00110011" output:6 ("0011", "01", "1100", "10", "0011", "01")
 
