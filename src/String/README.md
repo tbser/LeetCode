@@ -83,6 +83,14 @@ reversed_word = word[::-1]  # 'gnauh'
 reversed_words = [word[::-1] for word in s.split(' ')]
 reversed = ' '.join(reversed_words)
 ```
+### 541 reverse-string-II  指定位置字符逆序
+eg: Input: s = "abcdefg", k = 2  Output: "bacdfeg"
+```
+s = list(s)
+for i in range(0, len(s), 2*k):
+    s[i:i+k] = reversed(s[i:i+k])
+    return "".join(s)
+```
 ### 字符串移位
 给定一个字符串str，和一个整数i。i代表str中的位置，将str[0...i]移动右侧，str[i+1...N-1]移到左侧。 <br>
 eg: str="ABCDE", i=2  output: "DEABC". 要求时间复杂度为O(N), 额外空间复杂度为O(1)。<br>
