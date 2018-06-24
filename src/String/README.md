@@ -91,11 +91,20 @@ eg: s = "the sky is blue"<br>
 然后把每个单词逆转: "blue is sky the"。<br>
 写一个reverse函数，依次分别从字符串的开头和结尾遍历，交换字符位置 <br>
 
-将字符串按每个字符划分："hello world" -> ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd'] <br>
+将字符串按每个字符划分: <br>
 ```
-l = [] 
-for i in range(len(s)): 
-    l.append(s[i])   
+string = list(s)   # ['t', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e']
+```
+### 557 reverse-words-in-a-string-III 将每个单词逆序，保持该单词在句子中的位置不变
+eg: s = "Let's take LeetCode contest"   Output: "s'teL ekat edoCteeL tsetnoc"
+
+与reverse-words-in-a-string-II比较：直接把每个单词逆转<br>
+```
+word = 'huang'
+reversed_word = word[::-1]  # 'gnauh'
+
+reversed_words = [word[::-1] for word in s.split(' ')]
+reversed = ' '.join(reversed_words)
 ```
 
 ### 647 palindromic-substrings  回文子字符串
