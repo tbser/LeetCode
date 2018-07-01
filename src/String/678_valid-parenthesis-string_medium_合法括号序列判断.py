@@ -53,7 +53,15 @@ class Solution(object):
 # Note:
 # The string size will be in the range [1, 100].
 
+# 理解:
+# upper代表能有的右括号的上限（左括号加其他字符的个数）
+# 每次遇到右括号减1
+# 小于0的话代表多了一个右括号 直接终止循环
 
+# lower代表左括号个数
+# 遇到右括号减1  遇到* 可能当做右括号  所以也减1
+# 只要upper不小于0  循环正常执行
+# 如果lower小于0了 归为0 循环继续
 class Solution2(object):
     def checkValidString(self, s):
         lower, upper = 0, 0      # keep lower bound and upper bound of '(' counts
