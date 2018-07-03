@@ -7,10 +7,10 @@
 
 class Solution(object):
     def bubbleSort(self, A):
-        l = len(A)
+        n = len(A)
         flag = 0
-        while l:
-            for i in range(l-1):   # 对前l-1个数遍历(除了最后一个数 前面的数)
+        while n:
+            for i in range(n-1):   # 对前l-1个数遍历(除了最后一个数 前面的数)
                 if A[i] > A[i+1]:  # 当前数和后面一个数比较, 大的话交换位置
                     temp = A[i]
                     A[i] = A[i+1]
@@ -18,7 +18,7 @@ class Solution(object):
                     flag = 1
             if not flag:   # 没有交换过程,已经有序,直接结束循环
                 break
-            l -= 1
+            n -= 1
         return A
 
 
