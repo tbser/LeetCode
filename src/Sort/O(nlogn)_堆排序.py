@@ -83,7 +83,7 @@ class Solution(object):
             if left < end and A[left] < A[right]:  # 右节点更大 所以left移到右节点的位置
                 left = right
 
-            if rc > A[left]:
+            if rc > A[left]:    # 当前根节点与子节点中较大的值比较
                 break
 
             A[start] = A[left]   # rc <= A[left]  把A[left]移到开始s的位置
