@@ -74,7 +74,7 @@ class Solution(object):
 
         return A
 
-    def heapAdjust(self, A, start, end):  # 从下标s开始 到下标m 调整大根堆
+    def heapAdjust(self, A, start, end):  # 从下标start开始 到下标end 调整大根堆
         rc = A[start]
 
         left = 2 * start + 1    # 父节点s的左子结点 2*s+1
