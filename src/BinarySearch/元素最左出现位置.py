@@ -13,7 +13,7 @@ class Solution(object):
         if n == 0:
             return res
 
-        low = 0
+        low = 0 
         high = n - 1
         while low <= high:
             mid = low + (high - low) // 2
